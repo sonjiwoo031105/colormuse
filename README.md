@@ -1,54 +1,65 @@
-# React + TypeScript + Vite
+# 🎨 ColorMuse
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**ColorMuse**는 감각적인 색 조합을 추천해주는 컬러 팔레트 생성기입니다.  
+Colormind API를 사용해 무작위 또는 기준 색상 기반의 조화를 시각적으로 보여줍니다.
 
-Currently, two official plugins are available:
+![screenshot](./public/screenshot.png) <!-- 원한다면 나중에 추가 -->
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🧩 주요 기능
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- 🎲 무작위 컬러 팔레트 추천
+- 🎯 원하는 기준 색을 기반으로 조화 색상 생성 (예정)
+- ⭐ 팔레트 즐겨찾기 저장 (localStorage)
+- 📋 색상 HEX 코드 복사 기능
+- 📱 반응형 UI + 다크모드 지원
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+---
+
+## 🛠️ 사용 기술
+
+- **React** (with Vite + TypeScript)
+- **React Query**: 데이터 fetching 및 캐싱
+- **Tailwind CSS**: 빠른 스타일링
+- **Colormind API**: AI 기반 색상 조합 생성
+
+---
+
+## 🚀 실행 방법
+
+```bash
+# 1. 프로젝트 클론
+git clone https://github.com/your-username/colormuse.git
+cd colormuse
+
+# 2. 패키지 설치
+npm install
+
+# 3. 로컬 서버 실행
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+## 📁 폴더 구조
+```bash
+src/
+├─ components/    // UI 컴포넌트
+├─ hooks/         // custom hooks (React Query)
+├─ pages/         // 페이지 구성
+├─ utils/         // 유틸 함수
 ```
+
+---
+
+## 📌 향후 계획
+- 기준 색 기반 추천 기능
+- 팔레트 즐겨찾기
+- 색상 코드 검색 기능
+- Export as PNG or URL
+
+---
+
+## 📄 라이선스
+MIT © 2025
