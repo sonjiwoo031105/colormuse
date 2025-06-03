@@ -1,3 +1,4 @@
+import toast from "react-hot-toast";
 import { useFavoritesStore, type RGB } from "../store/favorites";
 import { rgbToHex } from "../utils/color";
 
@@ -6,7 +7,7 @@ const ColorBlock = ({ rgb }: { rgb: RGB }) => {
 
   const copyToClipboard = () => {
     navigator.clipboard.writeText(hex);
-    alert("클립보드에 복사되었습니다.");
+    toast.success(`${hex} 복사됨!`);
   }
 
   const { favorites, addFavorite, removeFavorite, isDuplicate } = useFavoritesStore();
@@ -23,19 +24,24 @@ const ColorBlock = ({ rgb }: { rgb: RGB }) => {
   }
 
   return (
-    <div className="flex flex-col flex-1 gap-2">
+    <div className="flex flex-col flex-1 items-center gap-2">
       <div
-        className="h-40 rounded-lg cursor-copy"
+        className="h-40 w-full rounded-lg cursor-pointer transition hover:opacity-90"
         style={{ backgroundColor: hex }}
         onClick={copyToClipboard}
-        title="Click to copy"
+        title="클릭하면 복사됩니다"
       >
-        <p className="text-white text-sm text-center mt-2 drop-shadow">{hex}</p>
+        <p className="text-white text-sm text-center mt-2 drop-shadow">
+          {hex}
+        </p>
       </div>
 
       <button
         onClick={handleToggleFavorite}
-        className="p-2 rounded text-sm bg-stone-50 text-gray-800 cursor-pointer"
+        className={`rounded-lg text-sm font-medium transition cursor-pointer ${isDuplicate(rgb)
+            ? 'p-2 bg-red-100 text-red-600 hover:bg-red-200 p-1'
+            : 'px-4 py-2 bg-pink-100 text-pink-600 hover:bg-pink-200'
+          }`}
       >
         {isDuplicate(rgb) ? '💔 좋아요 취소' : '❤️ 좋아요'}
       </button>
