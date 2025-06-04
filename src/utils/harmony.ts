@@ -15,7 +15,7 @@ export function generateComplementaryColors(rgb: RGB): string[] {
 
   const compHue = (h + 180) % 360;
   return [
-    rgbToHex(hslToRgb(h, s, l)), 
+    rgbToHex(hslToRgb(h, s, l)),
     rgbToHex(hslToRgb(compHue, s, l))
   ];
 }
@@ -23,10 +23,6 @@ export function generateComplementaryColors(rgb: RGB): string[] {
 export function generateAnalogousColors(rgb: RGB): string[] {
   const [h, s, l] = rgbToHsl(...rgb);
 
-  const hues = [
-    (h + 330) % 360,
-    h,
-    (h + 30) % 360,
-  ];
+  const hues = [h, (h + 330) % 360, (h + 30) % 360];
   return hues.map(hue => rgbToHex(hslToRgb(hue, s, l)));
 }

@@ -5,11 +5,6 @@ import { rgbToHex, type RGB } from "../utils/colorUtils";
 const ColorBlock = ({ rgb }: { rgb: RGB }) => {
   const hex = rgbToHex(rgb);
 
-  const copyToClipboard = () => {
-    navigator.clipboard.writeText(hex);
-    toast.success(`${hex} 복사됨!`);
-  }
-
   const { favorites, addFavorite, removeFavorite, isDuplicate } = useFavoritesStore();
 
   const handleToggleFavorite = () => {
@@ -23,29 +18,32 @@ const ColorBlock = ({ rgb }: { rgb: RGB }) => {
     }
   }
 
-  return (
-    <div className="flex flex-col flex-1 items-center gap-2">
-      <div
-        className="h-40 w-full rounded-lg cursor-pointer transition hover:opacity-90"
-        style={{ backgroundColor: hex }}
-        onClick={copyToClipboard}
-        title="클릭하면 복사됩니다"
-      >
-        <p className="text-white text-sm text-center mt-2 drop-shadow">
-          {hex}
-        </p>
-      </div>
+  const copyToClipboard = (color: string) => {
+    navigator.clipboard.writeText(color);
+    toast.success(`${color} 복사됨!`);
+  }
 
-      <button
-        onClick={handleToggleFavorite}
-        className={`rounded-lg text-sm font-medium transition cursor-pointer ${isDuplicate(rgb)
-            ? 'p-2 bg-red-100 text-red-600 hover:bg-red-200'
-            : 'px-4 py-2 bg-pink-100 text-pink-600 hover:bg-pink-200'
-          }`}
-      >
-        {isDuplicate(rgb) ? '💔 좋아요 취소' : '❤️ 좋아요'}
-      </button>
-    </div>
+  return (
+    <>
+      <div className="flex flex-col flex-1 items-center gap-2">
+        <div
+          className="h-40 w-full rounded-lg cursor-copy transition hover:opacity-90"
+          style={{ backgroundColor: hex }}
+          onClick={() => copyToClipboard(hex)}
+        >
+          <p className="text-white text-sm text-center mt-2 drop-shadow">
+            {hex}
+          </p>
+        </div>
+
+        <button
+          onClick={handleToggleFavorite}
+          className={`rounded-lg text-sm font-medium bg-stone-50 hover:bg-red-100 transition cursor-pointer ${isDuplicate(rgb) ? 'p-2' : 'px-4 py-2'}`}
+        >
+          {isDuplicate(rgb) ? '💔 좋아요 취소' : '❤️ 좋아요'}
+        </button>
+      </div>
+    </>
   )
 }
 

@@ -1,4 +1,3 @@
-import ColorHarmony from "../components/ColorHarmony";
 import PaletteView from "../components/PaletteView";
 import { useColormind } from "../hooks/useColormind"
 
@@ -12,7 +11,7 @@ const Home = () => {
 
       <button
         onClick={() => refetch()}
-        className="px-4 py-2 mb-6 rounded cursor-pointer bg-stone-50 hover:text-rose-300 transition"
+        className="px-4 py-2 mb-6 rounded cursor-pointer bg-stone-50 text-gray-600 hover:text-gray-800 transition"
       >
         새로운 팔레트 🎲
       </button>
@@ -24,8 +23,6 @@ const Home = () => {
       ) : (
         <p>색상 불러오기에 실패했습니다 😢</p>
       )}
-
-      <ColorHarmony />
     </main>
   )
 }

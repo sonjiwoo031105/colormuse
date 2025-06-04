@@ -1,8 +1,11 @@
+import { useState } from 'react';
 import { useFavoritesStore } from '../store/favorites'
 import { rgbToHex } from '../utils/colorUtils';
+import ColorHarmonyModal from './ColorHarmonyModal';
 
 const FavoritesList = () => {
   const { favorites, removeFavorite } = useFavoritesStore();
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const handleRemoveFavorite = (idx: number) => {
     if (confirm("삭제하시겠습니까?")) {
@@ -26,7 +29,8 @@ const FavoritesList = () => {
       {favorites.map((color, index) => (
         <div
           key={index}
-          className="group flex items-center justify-between p-4 bg-white shadow rounded-xl hover:shadow-lg transition"
+          className="group flex items-center justify-between p-4 bg-white shadow rounded-xl hover:shadow-lg transition cursor-pointer"
+          onClick={() => setOpenIndex(index)}
         >
           <div className="flex space-x-1">
             <div
@@ -47,11 +51,21 @@ const FavoritesList = () => {
           </div>
 
           <button
-            onClick={() => handleRemoveFavorite(index)}
+            onClick={(e) => {
+              e.stopPropagation();
+              handleRemoveFavorite(index);
+            }}
             className="ml-auto text-sm text-red-500 opacity-0 group-hover:opacity-100 transition hover:text-red-600 cursor-pointer"
           >
             삭제
           </button>
+
+          {openIndex === index &&
+            <ColorHarmonyModal
+              color={rgbToHex(color)}
+              onClose={() => setOpenIndex(null)}
+            />
+          }
         </div>
       ))}
     </div>

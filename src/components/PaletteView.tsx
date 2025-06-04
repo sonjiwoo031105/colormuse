@@ -1,4 +1,4 @@
-import type { RGB } from "../store/favorites";
+import type { RGB } from "../utils/colorUtils";
 import ColorBlock from "./ColorBlock";
 import FavoritesList from "./FavoritesList";
 
