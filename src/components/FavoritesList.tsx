@@ -1,5 +1,5 @@
 import { useFavoritesStore } from '../store/favorites'
-import { rgbToHex } from '../utils/color';
+import { rgbToHex } from '../utils/colorUtils';
 
 const FavoritesList = () => {
   const { favorites, removeFavorite } = useFavoritesStore();

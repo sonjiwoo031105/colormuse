@@ -1,6 +1,6 @@
 import toast from "react-hot-toast";
-import { useFavoritesStore, type RGB } from "../store/favorites";
-import { rgbToHex } from "../utils/color";
+import { useFavoritesStore } from "../store/favorites";
+import { rgbToHex, type RGB } from "../utils/colorUtils";
 
 const ColorBlock = ({ rgb }: { rgb: RGB }) => {
   const hex = rgbToHex(rgb);
@@ -39,7 +39,7 @@ const ColorBlock = ({ rgb }: { rgb: RGB }) => {
       <button
         onClick={handleToggleFavorite}
         className={`rounded-lg text-sm font-medium transition cursor-pointer ${isDuplicate(rgb)
-            ? 'p-2 bg-red-100 text-red-600 hover:bg-red-200 p-1'
+            ? 'p-2 bg-red-100 text-red-600 hover:bg-red-200'
             : 'px-4 py-2 bg-pink-100 text-pink-600 hover:bg-pink-200'
           }`}
       >

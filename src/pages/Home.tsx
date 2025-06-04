@@ -1,3 +1,4 @@
+import ColorHarmony from "../components/ColorHarmony";
 import PaletteView from "../components/PaletteView";
 import { useColormind } from "../hooks/useColormind"
 
@@ -23,6 +24,8 @@ const Home = () => {
       ) : (
         <p>색상 불러오기에 실패했습니다 😢</p>
       )}
+
+      <ColorHarmony />
     </main>
   )
 }

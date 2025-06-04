@@ -1,7 +1,6 @@
 import { create } from 'zustand'
 import { devtools, persist } from 'zustand/middleware'
-
-export type RGB = [number, number, number];
+import type { RGB } from '../utils/colorUtils'
 
 interface FavoritesState {
     favorites: RGB[]
