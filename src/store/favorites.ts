@@ -1,6 +1,6 @@
-import { create } from 'zustand'
-import { devtools, persist } from 'zustand/middleware'
-import type { RGB } from '../utils/colorUtils'
+import { create } from 'zustand';
+import { devtools, persist } from 'zustand/middleware';
+import type { RGB } from '../utils/colorUtils';
 
 interface FavoritesState {
     favorites: RGB[]

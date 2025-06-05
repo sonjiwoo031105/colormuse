@@ -1,4 +1,4 @@
-import ColorHarmony from './ColorHarmony'
+import ColorHarmony from './ColorHarmony';
 
 interface ColorHarmonyModalProps {
   color: string

@@ -1,5 +1,5 @@
-import { useQuery } from "@tanstack/react-query"
-import axios from "axios"
+import { useQuery } from "@tanstack/react-query";
+import axios from "axios";
 
 const fetchColors = async () => {
     const res = await axios.post("/api/colormind", {

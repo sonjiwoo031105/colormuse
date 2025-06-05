@@ -1,4 +1,4 @@
-import { rgbToHsl, hslToRgb, rgbToHex, type RGB } from './colorUtils'
+import { rgbToHsl, hslToRgb, rgbToHex, type RGB } from './colorUtils';
 
 export function generateTriadicColors(rgb: RGB): string[] {
   const [h, s, l] = rgbToHsl(...rgb);

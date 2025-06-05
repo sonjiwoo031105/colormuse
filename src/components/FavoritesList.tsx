@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useFavoritesStore } from '../store/favorites'
+import { useFavoritesStore } from '../store/favorites';
 import { rgbToHex } from '../utils/colorUtils';
 import ColorHarmonyModal from './ColorHarmonyModal';
 

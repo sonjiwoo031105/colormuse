@@ -38,7 +38,7 @@ const ColorBlock = ({ rgb }: { rgb: RGB }) => {
 
         <button
           onClick={handleToggleFavorite}
-          className={`rounded-lg text-sm font-medium bg-stone-50 hover:bg-red-100 transition cursor-pointer ${isDuplicate(rgb) ? 'p-2' : 'px-4 py-2'}`}
+          className={`rounded-lg text-xs font-medium bg-stone-50 hover:bg-red-100 transition cursor-pointer ${isDuplicate(rgb) ? 'p-2' : 'px-4 py-2'} sm:text-sm`}
         >
           {isDuplicate(rgb) ? '💔 좋아요 취소' : '❤️ 좋아요'}
         </button>

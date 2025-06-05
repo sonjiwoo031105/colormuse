@@ -1,5 +1,5 @@
 import PaletteView from "../components/PaletteView";
-import { useColormind } from "../hooks/useColormind"
+import { useColormind } from "../hooks/useColormind";
 
 const Home = () => {
   const { data: colors, isLoading, refetch } = useColormind();
