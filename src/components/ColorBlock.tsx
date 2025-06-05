@@ -27,7 +27,7 @@ const ColorBlock = ({ rgb }: { rgb: RGB }) => {
     <>
       <div className="flex flex-col flex-1 items-center gap-2">
         <div
-          className="h-40 w-full rounded-lg cursor-copy transition hover:opacity-90"
+          className="h-25 w-full rounded-lg cursor-copy transition hover:opacity-90"
           style={{ backgroundColor: hex }}
           onClick={() => copyToClipboard(hex)}
         >

@@ -44,7 +44,7 @@ const FavoritesList = () => {
           <div className="flex gap-2 ml-4">
             <span
               key={index}
-              className="text-xs text-gray-500 font-mono hidden sm:inline-block"
+              className="text-xs text-gray-500 font-mono sm:inline-block"
             >
               {rgbToHex(color)}
             </span>
@@ -55,7 +55,7 @@ const FavoritesList = () => {
               e.stopPropagation();
               handleRemoveFavorite(index);
             }}
-            className="ml-auto text-sm text-red-500 opacity-0 group-hover:opacity-100 transition hover:text-red-600 cursor-pointer"
+            className="ml-auto text-sm text-red-600 transition cursor-pointer"
           >
             삭제
           </button>

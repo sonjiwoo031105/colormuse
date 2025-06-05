@@ -80,7 +80,7 @@ export default function ColorHarmony({ color }: { color: string }) {
           return (
             <div
               key={idx}
-              className="w-24 h-24 rounded-lg shadow-md flex flex-col items-center justify-center text-white p-2 text-center cursor-copy"
+              className="w-20 h-20 rounded-lg shadow-md flex flex-col items-center justify-center text-white p-2 text-center cursor-copy"
               style={{ backgroundColor: hex }}
               onClick={() => copyToClipboard(hex)}
               title="클릭하면 복사됩니다"
