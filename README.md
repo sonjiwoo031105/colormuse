@@ -3,6 +3,8 @@
 **ColorMuse**는 감각적인 색 조합을 추천해주는 컬러 팔레트 생성기입니다.  
 Colormind API를 사용해 무작위 또는 기준 색상 기반의 조화를 시각적으로 보여줍니다.
 
+<img src="https://github.com/user-attachments/assets/5c3f9e49-dbf9-4956-8a87-24953456a4f6" width="600"/>
+
 ---
 
 ## 🧩 주요 기능
